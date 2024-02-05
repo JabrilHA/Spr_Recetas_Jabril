@@ -1,0 +1,69 @@
+:root{
+
+    --paddingGeneral:5px;
+
+    --color1:#ccd5ae;
+    --color2:#e9edc9;
+    --color3:#fefae0;
+    --color4:#faedcd;
+    --color5:#d4a373;
+    --colorLetras:rgb(57, 37, 17);
+    --colorfondo:#f2f5dac2;
+
+    --fuenteSerif : "Cinzel";
+    --fuenteSans:"Rubik";
+}
+
+h2 {
+	padding: 15px;
+	font-size: 40px;
+	color: var(--color5);
+	margin-left: 40%;
+	padding: 20px;
+	
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color1);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color:var(--colorLetras);
+}
+
+form input[type="text"],
+form select {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+
+
+form input[type="submit"] {
+    background-color: var(--color5);
+    color: var(--color3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+
+form input[type="submit"]:hover {
+    background-color: var(--color3);
+    color:var(--color5);
+}

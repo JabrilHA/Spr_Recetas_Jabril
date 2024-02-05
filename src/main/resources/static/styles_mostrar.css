@@ -1,0 +1,54 @@
+:root{
+    --paddingGeneral:5px;
+
+    --color1:#ccd5ae;
+    --color2:#e9edc9;
+    --color3:#fefae0;
+    --color4:#faedcd;
+    --color5:#d4a373;
+    --colorLetras:rgb(57, 37, 17);
+    --colorfondo:#f2f5dac2;
+
+    --fuenteSerif : "Cinzel";
+    --fuenteSans:"Rubik";
+}
+
+h2 {
+	padding: 15px;
+	font-size: 40px;
+	color: var(--color5);
+	font-family: var(--fuenteSerif);
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-left: 35px;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid var(--color1);
+    padding: 8px;
+    text-align: left;
+    color:var(--colorLetras);
+    font-size: 20px;
+    
+}
+
+table th {
+    background-color: var(--color1);
+}
+
+.id{
+	text-align: center;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--color3);
+}
+
+table tbody tr:hover {
+    background-color:var(--color2);
+}
