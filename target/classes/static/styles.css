@@ -100,6 +100,13 @@ nav ul li{
     background-color: var(--color1);
     color: var(--color4);
 }
+
+.mensaje{
+	background-color: var(--color3);
+	color:var(--color5);
+	font-family: var(--fuenteSerif);
+	font-size: 20px;
+}
 /*CUERPO DE LA PAIGINA*/
 main{
     background-color: var(--colorfondo);

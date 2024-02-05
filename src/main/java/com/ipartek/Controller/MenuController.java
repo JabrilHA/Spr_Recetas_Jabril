@@ -11,31 +11,40 @@ import com.ipartek.Model.Dificultad;
 import com.ipartek.Model.Receta;
 import com.ipartek.Repository.DificultadRepository;
 import com.ipartek.Repository.RecetaRepository;
+import com.ipartek.messages.GestorMensajes;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MenuController {
 
-	@Autowired 
+	@Autowired
 	RecetaRepository recetaRepo;
-	
+
 	@Autowired
 	DificultadRepository dificultadRepo;
-	
-	//Mostrar 
+
+	// Mostrar
 	@RequestMapping("/menu_mostrar")
-	public String menu_mostrar() {
-		
-		return "redirect:/";
+	public String menu_mostrar(Model model, HttpSession session) {
+
+		List<Receta> listarecetas = recetaRepo.findAll();
+
+		model.addAttribute("art_listaRecetas", listarecetas);
+		GestorMensajes.borrarMensaje(session);
+
+		return "mostrar";
 	}
-	
-	//Insertar
+
+	// Insertar
 	@RequestMapping("/menu_crearReceta")
-	public String menu_crearReceta (Model model){
+	public String menu_crearReceta(Model model, HttpSession session) {
 		List<Dificultad> listadificultades = dificultadRepo.findAll();
-		
+
 		model.addAttribute("art_listaDificultades", listadificultades);
 		model.addAttribute("objeto_entidad", new Receta());
-		
+
+		GestorMensajes.borrarMensaje(session);
 		return "insertar";
 	}
 }

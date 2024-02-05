@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ipartek.Model.Receta;
 import com.ipartek.Repository.RecetaRepository;
+import com.ipartek.messages.GestorMensajes;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MainController {
@@ -17,12 +20,13 @@ public class MainController {
 	RecetaRepository recetaRepo;
 	
 	@RequestMapping("/")
-	public String cargarInicio(Model model) {
+	public String cargarInicio(Model model, HttpSession session) {
 	
 		List<Receta> listarecetas = recetaRepo.findAll();
 	
 		model.addAttribute("art_listaRecetas", listarecetas);
 		
+		GestorMensajes.borrarMensaje(session);
 		return "mostrar";
 	}
 
